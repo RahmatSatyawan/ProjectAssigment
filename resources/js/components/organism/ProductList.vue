@@ -23,6 +23,13 @@
                         :disabled="item.qty == 0"
                         @emitClick="buttonClick(index)"
                     ></button-atom>
+                    <button-atom
+                        class="btn btn-primary btn-sm"
+                        text="Detail"
+                        color="blue"
+                        :disabled="item.qty == 0"
+                        @emitClick="buttonClick2(index)"
+                    ></button-atom>
                 </td>
             </tr>
         </tbody>
@@ -46,6 +53,9 @@ export default {
     methods: {
         buttonClick(index) {
             this.$emit("emitClick", index);
+        },
+        buttonClick2(index) {
+            this.$emit("emitClick2", index);
         },
     },
 };
