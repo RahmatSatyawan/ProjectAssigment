@@ -20,6 +20,7 @@ window.Vue = require("vue").default;
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+Vue.component("home-wrapper", require("./page/HomeWrapper.vue").default);
 Vue.component("home-page", require("./page/HomePage.vue").default);
 Vue.component("product-page", require("./page/ProductPage.vue").default);
 Vue.component("cart-page", require("./page/CartPage.vue").default);
@@ -40,8 +41,8 @@ Vue.component(
     "button-atom",
     require("./components/atom/ButtonAtom.vue").default
 );
-// Vue.component("modal-atom", require("./components/atom/ModalAtom.vue").default);
-// Vue.component("modal-atom", require("./compinents/atom/ModalAtom.vue").default);
+Vue.component("modal-atom", require("./components/atom/ModalAtom.vue").default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -50,6 +51,8 @@ Vue.component(
 import Vue from "vue";
 import VueRouter from "vue-router";
 import { routes } from "./routes";
+import store from "./store";
+
 
 Vue.use(VueRouter);
 const router = new VueRouter({
@@ -60,4 +63,5 @@ const router = new VueRouter({
 const app = new Vue({
     el: "#app",
     router,
+    store,
 });

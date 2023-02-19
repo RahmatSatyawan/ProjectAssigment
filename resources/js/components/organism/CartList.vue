@@ -1,7 +1,7 @@
 <template>
     <div>
         <table class="table table-striped table-hover">
-            <thead>
+            <thead class="table-head">
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Quantity</th>
@@ -13,16 +13,16 @@
                 <tr v-for="(item, index) in listCart" :key="index">
                     <td scope="row">{{ item.title }}</td>
                     <td>{{ item.qty }}</td>
-                    <td>Rp. {{ item.price }}</td>
+                    <td>{{ item.price }}</td>
                     <td>
                         <button-atom
-                            class="btn btn-warning btn-sm"
+                            class="btn btn-warning btn-sm m2"
                             text="Delete One"
                             color="blue"
                             @emitClick="buttonClick(index)"
                         ></button-atom>
                         <button-atom
-                            class="btn btn-danger btn-sm"
+                            class="btn btn-danger btn-sm m2"
                             text="Delete All"
                             color="blue"
                             @emitClick="buttonClick2(index)"
@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">Total</td>
-                    <td>Rp. {{ totalCart2 }}</td>
+                    <td>{{ totalCart }}</td>
                 </tr>
             </tbody>
         </table>
@@ -52,7 +52,7 @@ export default {
         },
         totalCart2: {
             type: Number,
-            default: 0,
+            default: 30,
         },
     },
     methods: {

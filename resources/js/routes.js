@@ -1,3 +1,4 @@
+import HomeWrapper from "./page/HomeWrapper.vue";
 import HomePage from "./page/HomePage.vue";
 import ProductPage from "./page/ProductPage.vue";
 import CartPage from "./page/CartPage.vue";
@@ -16,10 +17,15 @@ import DetailProduct from "./page/DetailProductPage.vue";
 
 export const routes = [
     {
-        name: "home",
+        name: "homewrapper",
         path: "/",
-        component: HomePage,
+        component: HomeWrapper,
         children: [
+            {
+                name: "home",
+                path: "",
+                component: HomePage,
+            },
             {
                 name: "product",
                 path: "/product",
@@ -42,44 +48,4 @@ export const routes = [
             },
         ],
     },
-
-    // {
-    //     path: "/about",
-    //     name: "about",
-    //     component: () =>
-    //         import(
-    //             /* webpackChunkName: "about" */ "./components/AboutComponent.vue"
-    //         ),
-    //     alias: "/tentang",
-    // },
-    //     children: [
-    //         {
-    //             path: "hello",
-    //             component: HelloUser,
-    //         },
-    //         {
-    //             path: "bye",
-    //             component: ByeUser,
-    //         },
-    //     ],
-    // },
-    // {
-    //     path: "/find",
-    //     name: "find",
-    //     component: Find,
-    // },
-    // {
-    //     path: "/cari",
-    //     redirect: "/cari",
-    // },
-    // {
-    //     path: "/testnavigasi",
-    //     name: "test_navigasi",
-    //     component: TestNavigasi,
-    // },
-    // {
-    //     path: "/*",
-    //     name: "NotFound",
-    //     component: NotFound,
-    // },
 ];

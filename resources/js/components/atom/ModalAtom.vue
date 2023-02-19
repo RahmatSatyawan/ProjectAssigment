@@ -20,7 +20,7 @@
                     ></button>
                 </div>
                 <div class="modal-body">
-                    <p>Total Pembelanjaan anda adalah : Rp. {{ totalCart2 }}</p>
+                    <p>Total Pembelanjaan anda adalah : Rp. {{ totalCart }}</p>
                 </div>
                 <div class="modal-footer">
                     <button
@@ -39,7 +39,7 @@
 <script>
 export default {
     props: {
-        totalCart2: {
+        totalCart: {
             type: Number,
         },
     },

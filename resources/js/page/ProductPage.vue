@@ -1,8 +1,6 @@
 <template>
     <div class="shadow content-container container-lg p-0">
-        <!-- <modal-atom :totalCart2="totalCart2"></modal-atom> -->
-
-        <h1>Semua Produk</h1>
+        <h2 class="title">Semua Produk</h2>
         <product-list
             :listProduct="listProduct"
             @emitClick="addCartClick"
@@ -12,63 +10,29 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
     data() {
-        return {
-            listProduct: [
-                {
-                    id: 1,
-                    title: "Indomie Goreng Rendang",
-                    desc: "Masakan instan terenak di dunia",
-                    qty: 10,
-                    price: 3900,
-                },
-                {
-                    id: 2,
-                    title: "Mie Gelas Rendang",
-                    desc: "Mie instan khusus anak kosan",
-                    qty: 3,
-                    price: 1500,
-                },
-                {
-                    id: 3,
-                    title: "Bakmi Mewah",
-                    desc: "Kalau anak kosan jangan macam2 deh",
-                    qty: 80,
-                    price: 10000,
-                },
-            ],
-            listCart: [],
-            totalCart: 0,
-        };
+        return {};
+    },
+    computed: {
+        ...mapGetters({
+            listProduct: "getAllData",
+
+            // listProduct: "getProduct",
+            // "listCart",
+            totalCart: "totalCart",
+        }),
+        // getAllData();
     },
     methods: {
-        // totalCart2() {
-        //     if (this.listCart.length < 0 || null || undefined) {
-        //         return 0;
-        //     } else {
-        //         return this.listCart.reduce(
-        //             (total, item) => total + item.qty,
-        //             0
-        //         );
-        //     }
-        // },
+        getAllData() {
+            this.$store.dispatch("getAllData");
+        },
         addCartClick(index) {
-            console.log("add" + index);
-            // let product = this.listProduct[index];
-            // let cart = this.listCart.find(
-            //     (item) => item.title == product.title
-            // );
-            // if (cart) {
-            //     cart.qty++;
-            // } else {
-            //     this.listCart.push({
-            //         title: product.title,
-            //         desc: product.desc,
-            //         qty: 1,
-            //         price: product.price,
-            //     });
-            // }
+            // let newProduct = this.listProduct[index];
+            // this.$store.dispatch("addCart", newProduct);
+            this.$store.dispatch("addCart", index);
         },
         detailProductClick(index) {
             console.log("detail" + index);
@@ -80,6 +44,9 @@ export default {
                 path: "/product/" + this.params,
             });
         },
+    },
+    mounted() {
+        this.getAllData();
     },
 };
 </script>

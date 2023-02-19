@@ -1,0 +1,27 @@
+{
+    "listProduct": [
+        {
+            "id": 1,
+            "title": "Indomie Goreng Rendang",
+            "desc": "Masakan instan terenak di dunia",
+            "qty": 10,
+            "price": 3900
+        },
+        {
+            "id": 2,
+            "title": "Mie Gelas Rendang",
+            "desc": "Mie instan khusus anak kosan",
+            "qty": 3,
+            "price": 1500
+        },
+        {
+            "id": 3,
+            "title": "Bakmi Mewah",
+            "desc": "Kalau anak kosan jangan macam2 deh",
+            "qty": 80,
+            "price": 10000
+        }
+    ],
+    "listCart": [],
+    "totalCart": 0
+}
