@@ -51,14 +51,6 @@ export default {
     methods: {
         search() {
             console.log(this.searchQuery);
-            // if(this.searchQuery == null || this.searchQuery == undefined || this.searchQuery == ""){
-            //     alert("Please input search query");
-            //     return;
-            // }
-            // if(this.searchQuery.length < 3){
-            //     alert("Please input search query more than 3 character");
-            //     return;
-            // }
             if (this.searchQuery) {
                 return this.$store.state.listProduct.filter((product) => {
                     return product.title
@@ -66,10 +58,6 @@ export default {
                         .includes(this.searchQuery.toLowerCase());
                 });
             }
-            // this.$router.push({ name: "search", params: { search: this.searchQuery } });
-
-            // this.$router.push({ name: "search", params: { search: "test" } });
-
             console.log("search");
         },
     },

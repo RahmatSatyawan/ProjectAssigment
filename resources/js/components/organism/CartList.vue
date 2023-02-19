@@ -13,7 +13,14 @@
                 <tr v-for="(item, index) in listCart" :key="index">
                     <td scope="row">{{ item.title }}</td>
                     <td>{{ item.qty }}</td>
-                    <td>{{ item.price }}</td>
+                    <td>
+                        {{
+                            new Intl.NumberFormat("id-ID", {
+                                style: "currency",
+                                currency: "IDR",
+                            }).format(item.price)
+                        }}
+                    </td>
                     <td>
                         <button-atom
                             class="btn btn-warning btn-sm m2"
@@ -31,7 +38,14 @@
                 </tr>
                 <tr>
                     <td colspan="3">Total</td>
-                    <td>{{ totalCart }}</td>
+                    <td>
+                        {{
+                            new Intl.NumberFormat("id-ID", {
+                                style: "currency",
+                                currency: "IDR",
+                            }).format(totalCart)
+                        }}
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -50,9 +64,9 @@ export default {
                 return [];
             },
         },
-        totalCart2: {
+        totalCart: {
             type: Number,
-            default: 30,
+            default: 0,
         },
     },
     methods: {

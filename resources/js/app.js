@@ -26,8 +26,6 @@ Vue.component("product-page", require("./page/ProductPage.vue").default);
 Vue.component("cart-page", require("./page/CartPage.vue").default);
 Vue.component("not-found-page", require("./page/NotFoundPage.vue").default);
 
-// Vue.component("shop-page", require("./components/ShopPage.vue").default);
-
 Vue.component(
     "product-list",
     require("./components/organism/ProductList.vue").default
@@ -36,7 +34,6 @@ Vue.component(
     "cart-list",
     require("./components/organism/CartList.vue").default
 );
-// Vue.component("list-item", require("./components/atom/ItemAtom.vue").default);
 Vue.component(
     "button-atom",
     require("./components/atom/ButtonAtom.vue").default
@@ -52,7 +49,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import { routes } from "./routes";
 import store from "./store";
-
 
 Vue.use(VueRouter);
 const router = new VueRouter({

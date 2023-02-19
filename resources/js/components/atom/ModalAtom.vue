@@ -20,7 +20,10 @@
                     ></button>
                 </div>
                 <div class="modal-body">
-                    <p>Total Pembelanjaan anda adalah : Rp. {{ totalCart }}</p>
+                    <p>Total Pembelanjaan anda adalah : {{new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+            }).format($store.state.totalCart), }}</p>
                 </div>
                 <div class="modal-footer">
                     <button

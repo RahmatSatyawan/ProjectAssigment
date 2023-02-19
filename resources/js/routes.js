@@ -4,16 +4,6 @@ import ProductPage from "./page/ProductPage.vue";
 import CartPage from "./page/CartPage.vue";
 import NotFound from "./page/NotFoundPage.vue";
 import DetailProduct from "./page/DetailProductPage.vue";
-// import ShopPage from "./components/ShopPage.vue";
-// import ExampleComponent from "./components/ExampleComponent.vue";
-
-// import Home from "./components/HomeComponent.vue";
-// import User from "./components/UserComponent.vue";
-// import HelloUser from "./components/HelloUser.vue";
-// import ByeUser from "./components/ByeUser.vue";
-// import NotFound from "./components/NotFoundComponent.vue";
-// import Find from "./components/FindComponent.vue";
-// import TestNavigasi from "./components/TestNavigasi.vue";
 
 export const routes = [
     {

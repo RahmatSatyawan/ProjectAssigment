@@ -14,9 +14,7 @@
             <button @click="goProduct" class="btn btn-warning m-4">
                 Product
             </button>
-             <button @click="goCart" class="btn btn-warning ">
-                Cart
-            </button>
+            <button @click="goCart" class="btn btn-warning">Cart</button>
 
             <button @click="goBack" class="btn btn-warning m-4">Back</button>
         </div>
@@ -26,31 +24,7 @@
 <script>
 export default {
     data() {
-        return {
-            // listProduct: [
-            //     {
-            //         id: 1,
-            //         title: "Indomie Goreng Rendang",
-            //         desc: "Masakan instan terenak di dunia",
-            //         qty: 10,
-            //         price: 3900,
-            //     },
-            //     {
-            //         id: 2,
-            //         title: "Mie Gelas Rendang",
-            //         desc: "Mie instan khusus anak kosan",
-            //         qty: 3,
-            //         price: 1500,
-            //     },
-            //     {
-            //         id: 3,
-            //         title: "Bakmi Mewah",
-            //         desc: "Kalau anak kosan jangan macam2 deh",
-            //         qty: 80,
-            //         price: 10000,
-            //     },
-            // ],
-        };
+        return {};
     },
     methods: {
         goCart() {

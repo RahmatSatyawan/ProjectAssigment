@@ -17,21 +17,14 @@ export default {
     },
     computed: {
         ...mapGetters({
-            listProduct: "getAllData",
-
-            // listProduct: "getProduct",
-            // "listCart",
-            totalCart: "totalCart",
+            listProduct: "getProduct",
         }),
-        // getAllData();
     },
     methods: {
         getAllData() {
             this.$store.dispatch("getAllData");
         },
         addCartClick(index) {
-            // let newProduct = this.listProduct[index];
-            // this.$store.dispatch("addCart", newProduct);
             this.$store.dispatch("addCart", index);
         },
         detailProductClick(index) {
@@ -46,7 +39,8 @@ export default {
         },
     },
     mounted() {
-        this.getAllData();
+        console.log("Component ProductPage mounted.");
+        this.$store.dispatch("getAllData");
     },
 };
 </script>

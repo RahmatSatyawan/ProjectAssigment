@@ -22,6 +22,5 @@
             "price": 10000
         }
     ],
-    "listCart": [],
-    "totalCart": 0
+    "listCart": []
 }

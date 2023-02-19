@@ -14,7 +14,14 @@
                 <td scope="row">{{ item.title }}</td>
                 <td>{{ item.desc }}</td>
                 <td>{{ item.qty }}</td>
-                <td>{{ item.price }}</td>
+                <td>
+                    {{
+                        new Intl.NumberFormat("id-ID", {
+                            style: "currency",
+                            currency: "IDR",
+                        }).format(item.price)
+                    }}
+                </td>
                 <td>
                     <button-atom
                         class="btn btn-primary btn-sm m-2"
