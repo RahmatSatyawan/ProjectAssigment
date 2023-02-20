@@ -31,6 +31,7 @@
             </nav>
         </div>
         <div class="content-container">
+            <h3>{{ listProductFiltered }}</h3>
             <router-view> </router-view>
         </div>
     </div>
@@ -41,6 +42,7 @@ export default {
     data() {
         return {
             searchQuery: null,
+            listProductFiltered: [],
         };
     },
     computed: {
@@ -52,11 +54,14 @@ export default {
         search() {
             console.log(this.searchQuery);
             if (this.searchQuery) {
-                return this.$store.state.listProduct.filter((product) => {
-                    return product.title
-                        .toLowerCase()
-                        .includes(this.searchQuery.toLowerCase());
-                });
+                this.listProductFiltered.push(
+                    this.$store.state.listProduct.filter((product) => {
+                        return product.title
+                            .toLowerCase()
+                            .includes(this.searchQuery.toLowerCase());
+                    })
+                );
+                return this.listProductFiltered;
             }
             console.log("search");
         },

@@ -5799,11 +5799,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      searchQuery: null
+      searchQuery: null,
+      listProductFiltered: []
     };
   },
   computed: {
@@ -5816,9 +5818,10 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
       console.log(this.searchQuery);
       if (this.searchQuery) {
-        return this.$store.state.listProduct.filter(function (product) {
+        this.listProductFiltered.push(this.$store.state.listProduct.filter(function (product) {
           return product.title.toLowerCase().includes(_this.searchQuery.toLowerCase());
-        });
+        }));
+        return this.listProductFiltered;
       }
       console.log("search");
     }
@@ -30266,7 +30269,16 @@ var render = function () {
       ]),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "content-container" }, [_c("router-view")], 1),
+    _c(
+      "div",
+      { staticClass: "content-container" },
+      [
+        _c("h3", [_vm._v(_vm._s(_vm.listProductFiltered))]),
+        _vm._v(" "),
+        _c("router-view"),
+      ],
+      1
+    ),
   ])
 }
 var staticRenderFns = []
